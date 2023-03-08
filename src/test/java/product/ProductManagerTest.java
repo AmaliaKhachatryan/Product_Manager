@@ -5,14 +5,17 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class ProductManagerTest {
-    Smartphone product1 = new Smartphone(1, "Superphone", 100_000, "xxx");
-    Smartphone product2 = new Smartphone(2, "Telephone", 100_000, "xxx");
-    Smartphone product3 = new Smartphone(3, "phone", 100_000, "xxx");
-    Smartphone product4 = new Smartphone(4, "phone", 100_000, "xxx");
-    Book product5 = new Book(5, "book", 100_000, "xxx");
-    Book product6 = new Book(6, "book", 100_000, "xxx");
-    Book product7 = new Book(7, "book", 100_000, "xxx");
-    Book product8 = new Book(8, "book", 100_000, "xxx");
+    Smartphone smartphone = new Smartphone(1, "phone", 100_000, "samsung");
+    Book book = new Book(5, "book", 100_000, "Alexander");
+    Product product = new Product(9, "player", 100_000);
+    Smartphone product1 = new Smartphone(1, "Superphone", 100_000, "aaa");
+    Smartphone product2 = new Smartphone(2, "Telephone", 100_000, "bbb");
+    Smartphone product3 = new Smartphone(3, "phone", 100_000, "ccc");
+    Smartphone product4 = new Smartphone(4, "phone", 100_000, "ddd");
+    Book product5 = new Book(5, "book", 100_000, "ggg");
+    Book product6 = new Book(6, "book", 100_000, "eee");
+    Book product7 = new Book(7, "book", 100_000, "fff");
+    Book product8 = new Book(8, "book", 100_000, "ooo");
     Product product9 = new Product(9, "player", 100_000);
     Product product10 = new Product(10, "player", 100_000);
     RepositoryProduct repo = new RepositoryProduct();
@@ -71,4 +74,5 @@ class ProductManagerTest {
     public void matchesTrueTest() {
         Assertions.assertEquals(true, manager.matches(product1, "phone"));
     }
+
 }
