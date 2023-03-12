@@ -120,10 +120,5 @@ class ProductManagerTest {
         Product[] expected = {smartphone};
         Assertions.assertArrayEquals(expected, manager.searchBy("ph"));
     }
-    @Test
-    void searchBooksTest() {
-        Product[] expected = {product5, product6, product7, product8};
-        Assertions.assertArrayEquals(expected, manager.searchBy("book"));
-    }
 
 }

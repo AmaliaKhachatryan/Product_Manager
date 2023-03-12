@@ -35,6 +35,11 @@ public class Product {
         this.price = price;
     }
 
+    public boolean matches(String search) {
+        if (getName().contains(search)) {
+            return true;
+        }
+        return false;
+    }
 }
-
 
