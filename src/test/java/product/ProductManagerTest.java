@@ -36,25 +36,25 @@ class ProductManagerTest {
     }
 
     @Test
-    void add() {
+    void findAllTest() {
         Product[] expected = {product1, product2, product3, product4, product5, product6, product7, product8, product9, product10};
         Assertions.assertArrayEquals(expected, manager.findAll());
     }
 
     @Test
-    void searchByPlayerTest() {
+    void searchAllPlayersTest() {
         Product[] expected = {product9, product10};
         Assertions.assertArrayEquals(expected, manager.searchBy("player"));
     }
 
     @Test
-    void searchByBookTest() {
+    void searchAllBooksTest() {
         Product[] expected = {product5, product6, product7, product8};
         Assertions.assertArrayEquals(expected, manager.searchBy("book"));
     }
 
     @Test
-    void searchByPhoneTest() {
+    void searchPhonesTest() {
         Product[] expected = {product1, product2, product3, product4};
         Assertions.assertArrayEquals(expected, manager.searchBy("phone"));
     }
@@ -120,4 +120,5 @@ class ProductManagerTest {
         Product[] expected = {smartphone};
         Assertions.assertArrayEquals(expected, manager.searchBy("ph"));
     }
+
 }
