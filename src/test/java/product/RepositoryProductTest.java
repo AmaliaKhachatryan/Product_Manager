@@ -48,22 +48,22 @@ class RepositoryProductTest {
     }
     @Test
     public void deleteByIdTest() {
-        repo.deleteById(3);
+        repo.removeById(3);
         Product[] extend = {product1,product2,product4,product5,product6,product7,product8,product9,product10};
         Assertions.assertArrayEquals(extend, repo.findAll());
     }
     @Test
     public void deleteAllTest() {
-        repo.deleteById(1);
-        repo.deleteById(2);
-        repo.deleteById(3);
-        repo.deleteById(4);
-        repo.deleteById(5);
-        repo.deleteById(6);
-        repo.deleteById(7);
-        repo.deleteById(8);
-        repo.deleteById(9);
-        repo.deleteById(10);
+        repo.removeById(1);
+        repo.removeById(2);
+        repo.removeById(3);
+        repo.removeById(4);
+        repo.removeById(5);
+        repo.removeById(6);
+        repo.removeById(7);
+        repo.removeById(8);
+        repo.removeById(9);
+        repo.removeById(10);
         Product[] extend = {};
         Assertions.assertArrayEquals(extend, repo.findAll());
     }

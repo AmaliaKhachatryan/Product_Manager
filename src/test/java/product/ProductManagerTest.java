@@ -44,25 +44,25 @@ class ProductManagerTest {
     @Test
     void searchAllPlayersTest() {
         Product[] expected = {product9, product10};
-        Assertions.assertArrayEquals(expected, manager.searchBy("player"));
+        Assertions.assertArrayEquals(expected, manager.searchByText("player"));
     }
 
     @Test
     void searchAllBooksTest() {
         Product[] expected = {product5, product6, product7, product8};
-        Assertions.assertArrayEquals(expected, manager.searchBy("book"));
+        Assertions.assertArrayEquals(expected, manager.searchByText("book"));
     }
 
     @Test
     void searchPhonesTest() {
         Product[] expected = {product1, product2, product3, product4};
-        Assertions.assertArrayEquals(expected, manager.searchBy("phone"));
+        Assertions.assertArrayEquals(expected, manager.searchByText("phone"));
     }
 
     @Test
     void searchByNotValidTest() {
         Product[] expected = {};
-        Assertions.assertArrayEquals(expected, manager.searchBy("short"));
+        Assertions.assertArrayEquals(expected, manager.searchByText("short"));
     }
 
     @Test
@@ -81,7 +81,7 @@ class ProductManagerTest {
         ProductManager manager = new ProductManager(repo);
         manager.add(book);
         Product[] expected = {book};
-        Assertions.assertArrayEquals(expected, manager.searchBy("book"));
+        Assertions.assertArrayEquals(expected, manager.searchByText("book"));
     }
 
     @Test
@@ -89,7 +89,7 @@ class ProductManagerTest {
         RepositoryProduct repo = new RepositoryProduct();
         ProductManager manager = new ProductManager(repo);
         Product[] expected = {};
-        Assertions.assertArrayEquals(expected, manager.searchBy("player"));
+        Assertions.assertArrayEquals(expected, manager.searchByText("player"));
     }
 
     @Test
@@ -98,7 +98,7 @@ class ProductManagerTest {
         ProductManager manager = new ProductManager(repo);
         manager.add(smartphone);
         Product[] expected = {smartphone};
-        Assertions.assertArrayEquals(expected, manager.searchBy("pho"));
+        Assertions.assertArrayEquals(expected, manager.searchByText("pho"));
     }
 
     @Test
@@ -107,7 +107,7 @@ class ProductManagerTest {
         ProductManager manager = new ProductManager(repo);
         manager.add(smartphone);
         Product[] expected = {};
-        Assertions.assertArrayEquals(expected, manager.searchBy("book"));
+        Assertions.assertArrayEquals(expected, manager.searchByText("book"));
     }
 
     @Test
@@ -118,12 +118,12 @@ class ProductManagerTest {
         manager.add(book);
         manager.add(product);
         Product[] expected = {smartphone};
-        Assertions.assertArrayEquals(expected, manager.searchBy("ph"));
+        Assertions.assertArrayEquals(expected, manager.searchByText("ph"));
     }
     @Test
     void searchBooksTest() {
         Product[] expected = {product5, product6, product7, product8};
-        Assertions.assertArrayEquals(expected, manager.searchBy("book"));
+        Assertions.assertArrayEquals(expected, manager.searchByText("book"));
     }
 
 }

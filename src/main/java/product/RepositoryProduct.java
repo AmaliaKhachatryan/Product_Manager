@@ -8,6 +8,10 @@ public class RepositoryProduct {
     }
 
     public void save(Product product) {
+        if (findById(product.getId()) != null) {
+            throw new AlreadyExistsException(product.getId());
+        }
+
         Product[] result = new Product[products.length + 1];
         int i = 0;
         while (i < products.length) {
@@ -18,7 +22,10 @@ public class RepositoryProduct {
         products = result;
     }
 
-    public void deleteById(int id) {
+    public void removeById(int id) {
+        if (findById(id) == null) {
+            throw new NotFoundException(id);
+        }
         Product[] result = new Product[products.length - 1];
         int count = 0;
         for (Product prod : products) {
@@ -26,7 +33,17 @@ public class RepositoryProduct {
                 result[count] = prod;
                 count++;
             }
+
         }
         products = result;
+    }
+
+    public Product findById(int id) {
+        for (Product prod : products) {
+            if (prod.getId() == id) {
+                return prod;
+            }
+        }
+        return null;
     }
 }
