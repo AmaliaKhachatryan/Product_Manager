@@ -26,13 +26,15 @@ public class ProductManager {
         }
         return result;
     }
+     public boolean matches(Product product,String search) {
+        return product.matches(search);
 
-    public boolean matches(Product product, String search) {
-        if (product.getName().contains(search)) {
-            return true;
-        } else {
-            return false;
-        }
     }
 }
-
+//    public boolean matches(Product product, String search) {
+//        if (product.getName().contains(search)) {
+//            return true;
+//        } else {
+//            return false;
+//        }
+//    }

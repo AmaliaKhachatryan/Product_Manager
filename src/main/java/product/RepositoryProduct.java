@@ -9,7 +9,8 @@ public class RepositoryProduct {
 
     public void save(Product product) {
         if (findById(product.getId()) != null) {
-            throw new AlreadyExistsException(product.getId());
+            AlreadyExistsException e= new AlreadyExistsException(product.getId());
+            throw e;
         }
 
         Product[] result = new Product[products.length + 1];
@@ -33,7 +34,6 @@ public class RepositoryProduct {
                 result[count] = prod;
                 count++;
             }
-
         }
         products = result;
     }
